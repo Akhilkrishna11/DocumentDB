@@ -122,9 +122,6 @@ namespace mydocumentdbdemo
 
         //Read a document
 
-
-
-
         private static Task<List<Employee>> GetEmployees(DocumentClient Client)
         {
             var Manager = Client.CreateDocumentQuery<Employee>
@@ -139,29 +136,7 @@ namespace mydocumentdbdemo
            return Task.Run(() => Manager.ToList());
 
         }
-        #region class hide
-        //private async Task<List<Employee>> GetListAsync()
-        //{
-        //    List<Employee> list = await Task.Run(() =>  ());
-        //    return list;
-        //}
-        //private static void ReadDocument(DocumentClient client)
-        //{
-        //    // Read the collection
-
-        //    var employees = client.CreateDocumentQuery<Employee>
-        //    ("dbs/Mycosmosdb/colls/MyCollection/").AsEnumerable();
-
-        //        foreach (var employee in employees)
-        //        {
-        //            Console.WriteLine(employee.Id);
-        //            Console.WriteLine(employee.Name);
-        //            Console.WriteLine(employee.Age);
-        //            Console.WriteLine("----------------------------------");
-        //        }
-
-        //}
-        #endregion
+       
 
         // Read A Document - Where Name == "John Doe"
         private static void ReadCurrent(DocumentClient Client,string Name)
